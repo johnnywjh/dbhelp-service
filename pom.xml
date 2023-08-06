@@ -1,0 +1,176 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.11</version>
+    </parent>
+
+    <groupId>kim.sesame.framework</groupId>
+    <artifactId>dbhelp-service</artifactId>
+    <version>v1.1</version><!-- sesame.version -->
+    <packaging>pom</packaging>
+    <name>${project.artifactId}--${project.version}</name>
+
+    <properties>
+        <sesame.version>v1.1</sesame.version>
+        <spring-boot.version>2.6.11</spring-boot.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <jdk.version>1.8</jdk.version>
+
+        <okhttp3.version>4.10.0</okhttp3.version>
+        <easyexcel.version>3.2.1</easyexcel.version>
+        <fastjson.version>2.0.27</fastjson.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <jjwt-impl.version>0.11.5</jjwt-impl.version>
+        <mapstruct.version>1.5.3.Final</mapstruct.version>
+        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+        <mybatis-plus-ds.version>4.1.1</mybatis-plus-ds.version>
+        <mysql.version>8.0.33</mysql.version>
+        <druid.version>1.2.17</druid.version>
+        <knife4j.version>4.1.0</knife4j.version>
+
+    </properties>
+
+    <!-- 项目集合-->
+    <modules>
+        <module>dbhelp-service-api</module>
+        <module>dbhelp-service-infrastructure</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2021.0.5</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <!-- 官网版本查看 https://spring.io/projects/spring-cloud#overview -->
+                <!-- 版本列表 https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2021.0-Release-Notes -->
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2021.0.4.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <!-- https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E -->
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>2021.1</version>
+                <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba-nacos-discovery -->
+            </dependency>
+            <!--            <dependency>-->
+            <!--                <groupId>com.alibaba.cloud</groupId>-->
+            <!--                <artifactId>aliyun-spring-boot-dependencies</artifactId>-->
+            <!--                <version>${aliyun-project-version}</version>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--            </dependency>-->
+
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>kim.sesame.framework</groupId>
+                <artifactId>framework-define</artifactId>
+                <version>${sesame.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>kim.sesame.framework</groupId>
+                <artifactId>framework-core</artifactId>
+                <version>${sesame.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>kim.sesame.framework</groupId>
+                <artifactId>web-spring-boot-starter</artifactId>
+                <version>${sesame.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>kim.sesame.framework</groupId>
+                <artifactId>framework-utils-swagger</artifactId>
+                <version>${sesame.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>kim.sesame.framework</groupId>
+                <artifactId>spring-cloud-common-sleuth</artifactId>
+                <version>${sesame.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <!--jdk 版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <!-- 处理资源文件的编码 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>
+            <!--源码打包-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+        <!--插件定义,被继承-->
+        <pluginManagement>
+            <plugins>
+            </plugins>
+        </pluginManagement>
+
+    </build>
+
+</project>

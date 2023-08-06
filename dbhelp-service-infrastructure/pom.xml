@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>kim.sesame.framework</groupId>
+		<artifactId>dbhelp-service</artifactId>
+		<version>v1.1</version><!-- sesame.version -->
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>dbhelp-service-infrastructure</artifactId>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}--${project.version}</name>
+
+	<modules>
+		<module>framework-define</module>
+		<module>framework-core</module>
+		<module>web-spring-boot-starter</module>
+		<module>framework-utils-swagger</module>
+		<module>spring-cloud-common-sleuth</module>
+	</modules>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+	</build>
+</project>

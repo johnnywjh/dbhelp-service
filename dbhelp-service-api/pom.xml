@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>kim.sesame.framework</groupId>
+        <artifactId>dbhelp-service</artifactId>
+        <version>v1.1</version><!-- sesame.version -->
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>dbhelp-service-api</artifactId>
+    <version>v3.01</version>
+    <packaging>jar</packaging>
+    <name>${project.artifactId}--${project.version}</name>
+
+    <properties>
+
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>kim.sesame.framework</groupId>
+            <artifactId>web-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>kim.sesame.framework</groupId>
+            <artifactId>framework-utils-swagger</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>kim.sesame.framework</groupId>
+            <artifactId>spring-cloud-common-sleuth</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
