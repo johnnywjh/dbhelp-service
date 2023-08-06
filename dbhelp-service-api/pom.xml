@@ -17,7 +17,7 @@
     <name>${project.artifactId}--${project.version}</name>
 
     <properties>
-
+        <jgit.version>5.12.0.202106070339-r</jgit.version>
     </properties>
 
     <dependencies>
@@ -31,6 +31,17 @@
         <dependency>
             <groupId>kim.sesame.framework</groupId>
             <artifactId>web-spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba.fastjson2</groupId>
+                    <artifactId>fastjson2-extension</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
         </dependency>
 
         <dependency>
@@ -41,6 +52,19 @@
         <dependency>
             <groupId>kim.sesame.framework</groupId>
             <artifactId>spring-cloud-common-sleuth</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+            <version>${jgit.version}</version>
+        </dependency>
+
+        <!-- 模板引擎 -->
+        <dependency>
+            <groupId>com.ibeetl</groupId>
+            <artifactId>beetl</artifactId>
+            <version>3.15.0.RELEASE</version>
         </dependency>
 
     </dependencies>

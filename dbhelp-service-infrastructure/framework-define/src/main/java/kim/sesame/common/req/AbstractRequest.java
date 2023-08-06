@@ -36,6 +36,13 @@ public abstract class AbstractRequest extends PrintFriendliness {
         }
     }
 
-
+    /**
+     * 是否需要打印请求日志
+     *
+     * @return
+     */
+    public boolean needsLog() {
+        return true;
+    }
 }
 
