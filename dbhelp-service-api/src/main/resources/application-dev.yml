@@ -1,4 +1,0 @@
-server:
-  port: 8085
-
-nacos_config_url: node1.cn:8848

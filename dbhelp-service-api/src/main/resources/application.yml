@@ -1,68 +1,15 @@
 server:
-  port: 8084
+  port: 8072
   servlet:
     session:
       timeout: 0
 
-db_url-suffix: ?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
-
-nacos_config_url: node1.cn:8848
-
-mybatis-plus:
-  mapper-locations: classpath:/mapper/**/*.xml
-
-spring:
-  profiles:
-    active: dev
-  application:
-    name: gateway-admin-api
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
-    validation:
-      provide: hibernate-validator
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://db.node.cn:3306/gateway_admin_new${db-url-suffix}
-    username: root
-    password: ZT6rfogb9TJswyKL
-    druid:
-      # 验证连接是否有效。此参数必须设置为非空字符串，下面三项设置成true才能生效
-      validation-query: SELECT 1
-      # 连接是否被空闲连接回收器(如果有)进行检验. 如果检测失败, 则连接将被从池中去除
-      test-while-idle: true
-      # 是否在从池中取出连接前进行检验, 如果检验失败, 则从池中去除连接并尝试取出另一个
-      test-on-borrow: true
-      # 是否在归还到池中前进行检验
-      test-on-return: false
-      # 连接在池中最小生存的时间，单位是毫秒
-      min-evictable-idle-time-millis: 30000
-  redis:
-    host: node1.cn
-    password: z0DZLXuHNlolLQ2j
-    port: 6379
-
-kim:
-  web:
-    enable-cross-domain: true
-
-knife4j:
-  enable: true
-  openapi:
-    title: 网关管理系统
-    version: v1.0
-    group:
-      gatewayadmin:
-        group-name: 网关组
-        api-rule: package
-        api-rule-resources:
-          - com.gatewayadmin.controller
-
-
-logging:
-  level:
-    com:
-      gatewayadmin:
-        repository: debug
-        db: debug
-
+code:
+  data:
+#    base-path: ${user.home}/ars/dbhelp
+#    theme-dic-name: themeList
+    git-enable: true
+    git-url: https://gitee.com/resources1/themeList.git
+#    git-user:
+#    git-pwd:
+#    branch:
