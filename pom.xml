@@ -39,6 +39,7 @@
     <!-- 项目集合-->
     <modules>
         <module>dbhelp-service-api</module>
+        <module>dbhelp-service-autoconfig</module>
         <module>dbhelp-service-infrastructure</module>
     </modules>
 

@@ -4,6 +4,10 @@ server:
     session:
       timeout: 0
 
+kim:
+  web:
+    enable-cross-domain: true
+
 code:
   data:
 #    base-path: ${user.home}/ars/dbhelp
