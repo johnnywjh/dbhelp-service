@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
 
-    <property name="appId" value="dbhelp-api"/>
+    <property name="appId" value="dbhelp-service-api"/>
     <property name="LOG_PATH" value="${user.home}/ars/${appId}"/>
     <property name="log_layout" value="[%thread] %highlight(%-5level) %cyan(%logger{50}:%L) - %msg%n"/>
 

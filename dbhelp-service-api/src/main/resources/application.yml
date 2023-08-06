@@ -4,10 +4,27 @@ server:
     session:
       timeout: 0
 
+spring:
+  profiles:
+    active: dev
+  application:
+    name: dbhelp-service-api
+
 kim:
   web:
     enable-cross-domain: true
 
+knife4j:
+  enable: false
+  openapi:
+    title: 数据库帮助工具和代码生成
+    version: v1.0
+    group:
+      dbhelp:
+        group-name: dbhelp-service-api
+        api-rule: package
+        api-rule-resources:
+          - com.dbhelp.controller
 code:
   data:
 #    base-path: ${user.home}/ars/dbhelp
@@ -17,3 +34,20 @@ code:
 #    git-user:
 #    git-pwd:
 #    branch:
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+knife4j:
+  enable: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+
+knife4j:
+  enable: false
