@@ -27,10 +27,10 @@ public class MainController extends AbstractWebController {
 //    @Autowired
 //    private SysUserService sysUserService;
 
-    @ApiOperation(value = "获取版本好")
+    @ApiOperation(value = "获取版本号")
     @IgnoreLoginCheck
     @PostMapping("/getVersion")
-    public ApiResult<String> login() {
+    public ApiResult<String> getVersion() {
         return success("v3.01");
     }
 
