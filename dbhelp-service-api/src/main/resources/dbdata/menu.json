@@ -2,7 +2,7 @@
   {
     "menuId": 1,
     "parentId": 0,
-    "title": "首页 jar json",
+    "title": "首页",
     "icon": "House",
     "path": "/home",
     "component": "/home"

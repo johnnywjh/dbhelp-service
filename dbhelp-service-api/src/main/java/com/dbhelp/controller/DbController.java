@@ -18,7 +18,6 @@ import kim.sesame.common.web.util.FileUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -175,7 +174,7 @@ public class DbController extends AbstractWebController {
     }
 
     public String getFileDir(String name) {
-        String basePath = baseConfig.getBasePath() + "/data/" + name;
+        String basePath = baseConfig.getBasePath() + "/dbdata/" + name;
         File f = new File(basePath);
         if (!f.exists()) {
             f.mkdirs();
