@@ -1,18 +1,33 @@
-server:
-  port: 8072
-  servlet:
-    session:
-      timeout: 0
-
 spring:
   profiles:
     active: dev
   application:
     name: dbhelp-service-api
 
+
+server:
+  compression:
+    min-response-size: 1024
+    mime-types: application/javascript, application/json, application/xml, text/html, text/css, text/javascript, text/plain
+    enabled: true
+  port: 8072
+  servlet:
+    session:
+      timeout: 0
+
 kim:
   web:
     enable-cross-domain: true
+
+code:
+  data:
+#    base-path: ${user.home}/ars/dbhelp
+#    theme-dic-name: themeList
+    git-enable: true
+    git-url: https://gitee.com/resources1/themeList.git
+#    git-user:
+#    git-pwd:
+#    branch:
 
 knife4j:
   enable: false
@@ -25,15 +40,6 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.dbhelp.controller
-code:
-  data:
-#    base-path: ${user.home}/ars/dbhelp
-#    theme-dic-name: themeList
-    git-enable: true
-    git-url: https://gitee.com/resources1/themeList.git
-#    git-user:
-#    git-pwd:
-#    branch:
 
 ---
 spring:
