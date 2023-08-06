@@ -1,12 +1,16 @@
 package com.dbhelp.model.login;
 
+import cn.hutool.json.JSONArray;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import io.swagger.annotations.ApiModelProperty;
 import kim.sesame.common.req.PrintFriendliness;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -48,4 +52,8 @@ public class UserVo extends PrintFriendliness {
     private Boolean deleted;
 
     private String nickname;
+
+    @ApiModelProperty("权限列表")
+    private JSONArray authorities;
+
 }

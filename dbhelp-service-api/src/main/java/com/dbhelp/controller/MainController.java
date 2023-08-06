@@ -6,6 +6,7 @@ import com.dbhelp.model.login.CaptchaResult;
 import com.dbhelp.model.login.UserLoginReq;
 import com.dbhelp.model.login.UserLoginResp;
 import com.dbhelp.model.login.UserVo;
+import com.dbhelp.service.UserService;
 import com.wf.captcha.SpecCaptcha;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -14,6 +15,7 @@ import kim.sesame.common.result.ApiResult;
 import kim.sesame.common.web.annotation.IgnoreLoginCheck;
 import kim.sesame.common.web.controller.AbstractWebController;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,8 +26,8 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class MainController extends AbstractWebController {
 
-//    @Autowired
-//    private SysUserService sysUserService;
+    @Autowired
+    private UserService userService;
 
     @ApiOperation(value = "获取版本号")
     @IgnoreLoginCheck
@@ -57,7 +59,7 @@ public class MainController extends AbstractWebController {
     public ApiResult<UserVo> userInfo(BaseUserRequest req) {
 //        Long userId = UserContext.getUserContext().getUser().getUserId();
 //        return success(sysUserService.getByIdRel(userId.toString()));
-        return success(new UserVo());
+        return success(userService.getUserInfo(req));
     }
 
 //    @ApiOperation("修改自己密码")
