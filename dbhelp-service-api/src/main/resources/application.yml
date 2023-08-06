@@ -6,14 +6,14 @@ spring:
 
 
 server:
-  compression:
-    min-response-size: 1024
-    mime-types: application/javascript, application/json, application/xml, text/html, text/css, text/javascript, text/plain
-    enabled: true
   port: 8072
   servlet:
     session:
       timeout: 0
+  compression:
+    min-response-size: 1024
+    mime-types: application/javascript, application/json, application/xml, text/html, text/css, text/javascript, text/plain
+    enabled: true
 
 kim:
   web:
