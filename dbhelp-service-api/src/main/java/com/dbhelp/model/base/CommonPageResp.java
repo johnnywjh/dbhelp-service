@@ -1,7 +1,10 @@
 package com.dbhelp.model.base;
 
 import kim.sesame.common.result.AbstractResponse;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 

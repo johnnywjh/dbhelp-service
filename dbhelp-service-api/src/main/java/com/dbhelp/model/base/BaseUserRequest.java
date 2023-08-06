@@ -1,7 +1,9 @@
 package com.dbhelp.model.base;
 
 import kim.sesame.common.req.BaseRequest;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor

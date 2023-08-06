@@ -1,7 +1,7 @@
 package com.dbhelp.util;
 
-import com.google.common.base.CaseFormat;
 import com.dbhelp.model.page.Column;
+import com.google.common.base.CaseFormat;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 

@@ -2,7 +2,10 @@ package com.dbhelp.controller;
 
 
 import com.dbhelp.model.base.BaseUserRequest;
-import com.dbhelp.model.login.*;
+import com.dbhelp.model.login.CaptchaResult;
+import com.dbhelp.model.login.UserLoginReq;
+import com.dbhelp.model.login.UserLoginResp;
+import com.dbhelp.model.login.UserVo;
 import com.wf.captcha.SpecCaptcha;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -11,7 +14,6 @@ import kim.sesame.common.result.ApiResult;
 import kim.sesame.common.web.annotation.IgnoreLoginCheck;
 import kim.sesame.common.web.controller.AbstractWebController;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
