@@ -282,7 +282,7 @@ public class DbController extends AbstractWebController {
 
     @RequestMapping("/getnode")
     @ResponseBody
-    public ApiResult getnode(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+    public ApiResult getnode(HttpServletRequest request) {
 
         String outPath = (String) request.getSession().getAttribute("outPath");
         String fileDir = (String) request.getSession().getAttribute("fileDir");

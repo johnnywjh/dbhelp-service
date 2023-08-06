@@ -27,6 +27,13 @@ public class MainController extends AbstractWebController {
 //    @Autowired
 //    private SysUserService sysUserService;
 
+    @ApiOperation(value = "获取版本好")
+    @IgnoreLoginCheck
+    @PostMapping("/getVersion")
+    public ApiResult<String> login() {
+        return success("v3.01");
+    }
+
     @ApiOperation(value = "图形验证码")
     @IgnoreLoginCheck
     @GetMapping("/captcha")
