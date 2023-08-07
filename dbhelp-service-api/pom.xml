@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>dbhelp-service-api</artifactId>
-    <version>v3.01</version>
+    <version>v3.02</version>
     <packaging>jar</packaging>
     <name>${project.artifactId}--${project.version}</name>
 
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>kim.sesame.framework</groupId>
             <artifactId>dbhelp-service-autoconfig</artifactId>
-            <version>v3.01</version>
+            <version>v3.02</version>
         </dependency>
 
         <dependency>

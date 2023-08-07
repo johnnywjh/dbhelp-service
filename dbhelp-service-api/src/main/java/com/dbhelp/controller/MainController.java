@@ -33,7 +33,7 @@ public class MainController extends AbstractWebController {
     @IgnoreLoginCheck
     @PostMapping("/getVersion")
     public ApiResult<String> getVersion() {
-        return success("v3.01");
+        return success("v3.02");
     }
 
     @ApiOperation(value = "图形验证码")
@@ -60,6 +60,13 @@ public class MainController extends AbstractWebController {
 //        Long userId = UserContext.getUserContext().getUser().getUserId();
 //        return success(sysUserService.getByIdRel(userId.toString()));
         return success(userService.getUserInfo(req));
+    }
+
+    @ApiOperation("重新加载菜单")
+    @PostMapping("/reloadMenu")
+    public ApiResult reloadMenu() {
+        userService.reloadMenu();
+        return success();
     }
 
 //    @ApiOperation("修改自己密码")

@@ -27,6 +27,16 @@ public class UserService implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        this.reloadMenu();
+    }
+
+    public UserVo getUserInfo(BaseUserRequest req) {
+        return UserVo.builder()
+                .authorities(JSONUtil.parseArray(menuJson))
+                .build();
+    }
+
+    public void reloadMenu() {
         String basePath = baseConfig.getBasePath() + "/" + FILE_NAME;
         File f = new File(basePath);
         if (f.exists()) {
@@ -40,14 +50,5 @@ public class UserService implements ApplicationRunner {
             log.info("菜单文件不存在 创建文件成功: {}", basePath);
         }
         log.info("\n菜单json数据读取\n{}", JSONUtil.toJsonPrettyStr(menuJson));
-        // 写入到磁盘文件
-
     }
-
-    public UserVo getUserInfo(BaseUserRequest req) {
-        return UserVo.builder()
-                .authorities(JSONUtil.parseArray(menuJson))
-                .build();
-    }
-
 }
