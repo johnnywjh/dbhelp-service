@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>dbhelp-service-autoconfig</artifactId>
-    <version>v3.02</version>
+    <version>v1.1</version>
     <packaging>jar</packaging>
     <name>${project.artifactId}--${project.version}</name>
 
