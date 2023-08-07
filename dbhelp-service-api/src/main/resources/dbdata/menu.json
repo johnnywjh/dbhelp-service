@@ -4,7 +4,7 @@
     "parentId": 0,
     "title": "首页",
     "icon": "House",
-    "path": "/home",
+    "path": "/page/home",
     "component": "/home"
   },
   {
@@ -12,14 +12,14 @@
     "parentId": 0,
     "title": "工具集合",
     "icon": "Setting",
-    "path": "/tools"
+    "path": "/page/tools"
   },
   {
     "menuId": 21,
     "parentId": 2,
     "title": "数据库解析",
     "icon": "AppstoreAddOutlined",
-    "path": "/tools/dbhelp",
+    "path": "/page/tools/dbhelp",
     "component": "/tools/dbhelp"
   },
   {
@@ -27,7 +27,7 @@
     "parentId": 2,
     "title": "链接组合",
     "icon": "Link",
-    "path": "/tools/pagelink",
+    "path": "/page/tools/pagelink",
     "component": "/tools/pagelink"
   },
   {
@@ -35,14 +35,14 @@
     "parentId": 0,
     "title": "内嵌页面",
     "icon": "Link",
-    "path": "/iframe"
+    "path": "/page/iframe"
   },
   {
     "menuId": 31,
     "parentId": 3,
     "title": "cron",
     "icon": "Link",
-    "path": "/iframe/cron",
+    "path": "/page/iframe/cron",
     "component": "https://qqe2.com/cron"
   },
   {
@@ -50,7 +50,7 @@
     "parentId": 3,
     "title": "json格式化",
     "icon": "Link",
-    "path": "/iframe/jsoncolor",
+    "path": "/page/iframe/jsoncolor",
     "component": "https://qqe2.com/jsontool/jsoncolor"
   }
 ]
